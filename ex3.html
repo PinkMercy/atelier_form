@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(1248)https://mail-attachment.googleusercontent.com/attachment/u/0/?ui=2&ik=e4cb6bf90d&attid=0.1&permmsgid=msg-f:1762510422086801174&th=1875b1e405685716&view=att&disp=inline&realattid=f_lg6d6kiw3&ser=1&saddbat=ANGjdJ9hJ4WorJOllAQa5Z6D9mYijUZf3Fp4EIIT9OYgWf9edS-3KBQTh8WW0l06o44BudVx0ERRKsjyskj2bqNqqClG-AmD9PDoNUjBWMsYo_smt2ivEaIUDEI-3PGXN040b87UL7DIEir0SWK3Oax6i66GoVcsUEWeQVZefMRFIJ9LmHZCNHAO5xnPdDgON1Cpp13OFFHFqm2Kqhr2zEjrOmCvHhdEcqHFq0Dl6_OsjWMJX8Mzy0sFih9a3FxM9VdzR6N1lrOWUoa6iRwgFaTrzBoizkPWoJ2mH9jot6ignGOqboy75sf9XoaOKcahK2Y7rM7voHNUgG1XC8ws5mr4DFGyOKpQFDP4vQLEVaefouolr2Fj4IEHuZ2pAGEEf6u3OJpSgtuKE_vnzOQ1fHg48qzILeh6SaLu8X1eIS9E4VtRvbY40uDsVayghhUurtLJ7BcOrkgzrUrjTcZsv92GHSocL9OBIjTjadcm66ZtGYeueYqe7M2WSTqWrIzMohPhygsE72k9JCsgHvQ4cS6YKmC-j3r0GrkBvOCWUkzrM2HcW0sol9JUrftCLbMQuB2_Hp-pOkSTA-QV9GHM-6UHAEY7FTVhngV4bBtTPiWT9MyhXtiy0rKYDjJ6bjsItIS1C5fnfCo0oPp_eae2BAm3OtzJ6WvoBMQyFXc536mp-DURuy6epoq0IoVVpcbOX9s22wW37n7c7ZKSYR_2kH1PY1Tu4veHoGJ0jyd3kKXuAEmYonDgmsPdU9lIGMa-P8rdOIXHcppAD53z1n0KvoIWITF8xjRDld_j2-FaRBoDBvfugy3aMK-LZinPj2GWd3qinXC2EMlxAkAQG2tj1lfkfUIFMYOxw7AtLmz61nfG2z3_lBsHj_Cf1W7w_D7Ip7gcn24JS0TYLDuTGhsgd3hsLbjW0fcrvxJXXwYJNMQHqdjcCyumCMECM3DXdUWtt6Y5_G4zvK1Ts_yZU19QqOoJTVwt4sHfpj9pGvzFjGnwIUWSXQlTE9Zwi8LP_Pw8HiK1sOrrgYlf9DlkMNl5 -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style></style>
+</head>
+
+<body>
+
+
+    <form name="m__inscription" method="get" target="_blank">
+        <fieldset>
+            <legend>INFORMATIONS</legend>
+            <label>Nom: </label>
+            <input type="text" name="nom">
+            <label>Prénom :</label>
+            <input type="text" name="pnom"><br>
+            <label>Age :</label>
+            <input type="text" name="age" size="2"><br>
+            <label>Adresse E-mail: </label>
+            <input type="email" name="adr1"><br>
+            <label>Confirmer votre adresse E-mail:</label>
+            <input type="email" name="adr2"><br>
+        </fieldset><br>
+        <fieldset>
+            <legend>SESSION</legend>
+            <select name="typeCh">
+                <option value="H" selected="">Hiver</option>
+                <option value="P">Printemps</option>
+                <option value="E">Eté</option>
+                <option value="A">Automne</option>
+            </select>
+            <label>Cette session commence au mois:</label>
+            <input type="text" name="debutSession" size="10" readonly=""><br>
+        </fieldset><br>
+        <fieldset>
+            <legend>NIVEAU</legend>
+            <input type="radio" name="niveau" checked=""><label>A1</label><br>
+            <input type="radio" name="niveau"><label>A2</label><br>
+            <input type="radio" name="niveau"><label>B1</label><br>
+            <input type="radio" name="niveau"><label>B2</label><br>
+            <input type="radio" name="niveau"><label>C1</label><br>
+        </fieldset>
+        <input type="button" value="Calculer">
+        <label>Total des frais: </label>
+        <input type="text" name="Tf" readonly=""><br><br>
+        <input type="submit" value="Soumettre">
+        <input type="reset" value="Annuler">
+    </form>
+<script>
+            ad1 = document.forms[0].elements[4]
+      
+            
+                ad2 = document.forms[0].elements[5]
+                ad2.addEventListener("blur",bluuur)
+            function bluuur()
+            {
+               
+                if(ad1.value != ad2.value)
+            {
+                alert("adress not match")
+            }
+            }
+
+            selecte1 = document.forms[0].elements[7]
+            calc= document.forms[0].elements[15]
+            calc.addEventListener("click",calculer)
+            console.log(selecte1)
+            selecte2 = document.forms[0].elements[8]
+            selecte1.addEventListener("blur", bluur)
+            //console.log(this.value)
+            marque=this.value
+            dat=new Date()
+
+             year=dat.getFullYear()
+             mois=dat.getMonth()+1
+             console.log(mois)
+             console.log(year)
+             date=mois+"/"+year
+             parseInt(year)
+        a=0
+
+      function bluur() {
+                if (selecte1.selectedIndex == 0) {
+                      selecte2.value="1/"+year 
+                    a=1
+                    if(mois>a){
+                        selecte2.value="1/"+parseInt(year+1)
+                    } 
+                  
+                   
+                }
+
+                if (selecte1.selectedIndex == 1) {
+                    a=4
+                    if(mois>a){
+                        selecte2.value="4/"+parseInt(year+1)
+                    }else
+                    selecte2.value="4/"+year
+                    
+                    
+                }
+                if (selecte1.selectedIndex == 2) {
+                    a=7
+                    if(mois>a){
+                        selecte2.value="7/"+parseInt(year+1)
+                    }
+                    selecte2.value="7/"+year
+                  
+                }
+                if (selecte1.selectedIndex == 3) {
+                    selecte2.value="10/"+year
+                    a=10
+                    if(mois>a){
+                        selecte2.value="10/"+parseInt(year+1)
+                    }
+                }
+            }
+            a1 = document.forms[0].elements[10]
+            console.log(ad1)
+            a2 = document.forms[0].elements[11] 
+            b1 = document.forms[0].elements[12] 
+            b2 = document.forms[0].elements[13] 
+            c1 = document.forms[0].elements[14] 
+
+            age = document.forms[0].elements[3]   
+            pt = document.forms[0].elements[16] 
+            var pc=450
+function calculer()
+{
+ 
+    if(parseInt(age.value)<15)
+    {
+        a1.checked=true
+    }
+if(b2.checked == true || c1.checked == true)
+{
+    pt.value=pc+parseInt(pc/5)+"dt"
+}else{
+    pt.value=pc+parseInt(pc/5)-10+"dt"
+}
+    
+}
+
+</script>
+</body>
+
+</html>

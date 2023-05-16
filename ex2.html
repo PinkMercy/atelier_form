@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(1248)https://mail-attachment.googleusercontent.com/attachment/u/0/?ui=2&ik=e4cb6bf90d&attid=0.1&permmsgid=msg-f:1762510422086801174&th=1875b1e405685716&view=att&disp=inline&realattid=f_lg6d6kiw3&ser=1&saddbat=ANGjdJ9hJ4WorJOllAQa5Z6D9mYijUZf3Fp4EIIT9OYgWf9edS-3KBQTh8WW0l06o44BudVx0ERRKsjyskj2bqNqqClG-AmD9PDoNUjBWMsYo_smt2ivEaIUDEI-3PGXN040b87UL7DIEir0SWK3Oax6i66GoVcsUEWeQVZefMRFIJ9LmHZCNHAO5xnPdDgON1Cpp13OFFHFqm2Kqhr2zEjrOmCvHhdEcqHFq0Dl6_OsjWMJX8Mzy0sFih9a3FxM9VdzR6N1lrOWUoa6iRwgFaTrzBoizkPWoJ2mH9jot6ignGOqboy75sf9XoaOKcahK2Y7rM7voHNUgG1XC8ws5mr4DFGyOKpQFDP4vQLEVaefouolr2Fj4IEHuZ2pAGEEf6u3OJpSgtuKE_vnzOQ1fHg48qzILeh6SaLu8X1eIS9E4VtRvbY40uDsVayghhUurtLJ7BcOrkgzrUrjTcZsv92GHSocL9OBIjTjadcm66ZtGYeueYqe7M2WSTqWrIzMohPhygsE72k9JCsgHvQ4cS6YKmC-j3r0GrkBvOCWUkzrM2HcW0sol9JUrftCLbMQuB2_Hp-pOkSTA-QV9GHM-6UHAEY7FTVhngV4bBtTPiWT9MyhXtiy0rKYDjJ6bjsItIS1C5fnfCo0oPp_eae2BAm3OtzJ6WvoBMQyFXc536mp-DURuy6epoq0IoVVpcbOX9s22wW37n7c7ZKSYR_2kH1PY1Tu4veHoGJ0jyd3kKXuAEmYonDgmsPdU9lIGMa-P8rdOIXHcppAD53z1n0KvoIWITF8xjRDld_j2-FaRBoDBvfugy3aMK-LZinPj2GWd3qinXC2EMlxAkAQG2tj1lfkfUIFMYOxw7AtLmz61nfG2z3_lBsHj_Cf1W7w_D7Ip7gcn24JS0TYLDuTGhsgd3hsLbjW0fcrvxJXXwYJNMQHqdjcCyumCMECM3DXdUWtt6Y5_G4zvK1Ts_yZU19QqOoJTVwt4sHfpj9pGvzFjGnwIUWSXQlTE9Zwi8LP_Pw8HiK1sOrrgYlf9DlkMNl5 -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style></style>
+</head>
+
+<body>
+    <h3> Commande </h3>
+    <form action="http://commande.php/" method="post" target="_blank">
+        Téléphone de contact:<input type="tel" id="m_e" name="phone" size="40">
+        <fieldset>
+            <legend>Caractéristiques</legend>
+            LG <input type="radio" name="marque" value="LG">
+            SAMSUNG <input type="radio" name="marque" value="Samsung"><br>
+            Puissance <select id="m_p" name="btu">
+                <option>9000</option>
+                <option>12000</option>
+                <option>18000</option>
+                <option>24000</option>
+            </select> BTU <br><br>
+            Prix <input type="number" name="prix" readonly=""><br>
+        </fieldset>
+        <fieldset>
+            <legend>Options</legend><br>
+            Quantité: <input type="number" name="quantite" value="1" size="2"><br><br>
+            Installation +100dt <input type="checkbox" value="100" name="extras">
+            Garantie 1an +200dt <input type="checkbox" value="200" name="extras">
+            Livraison à domicile +50dt <input type="checkbox" value="50" name="extras"><br><br>
+            <input type="button" value="   Commander   "><br>
+        </fieldset>
+        <label for="m_c"> Votre Commande contient :</label><br>
+        <textarea id="m_c" name="détails" cols="60" rows="6"></textarea><br>
+        <label> Total :</label><input type="number" name="montant" readonly=""><br><br>
+    </form>
+    <script>
+        tabPrix = new Array("1400/1300", "2500/1600", "3700/2400", "4200/3000")
+
+        selecte1 = document.forms[0].elements[4]
+        console.log(selecte1)
+
+        //option1 = selecte1.options[selecte1.options.length - 4]
+        //console.log(option1)
+        // option2 = selecte1.options[selecte1.options.length - 3]
+        // console.log(option2)
+        // option3 = selecte1.options[selecte1.options.length -2]
+        // console.log(option3)
+        // option4 = selecte1.options[selecte1.options.length - 1]
+        // console.log(option4)
+
+        radio1 = document.forms[0].elements[2]
+        console.log(radio1.value)
+        radio1.addEventListener("click", lg)
+        prix = document.forms[0].elements[5]
+        commander = document.forms[0].elements[11]
+        commander.addEventListener("click", command)
+var marque
+var s0
+var lg
+
+        function lg() {
+            selecte1.addEventListener("blur", bluur)
+            //console.log(this.value)
+            marque=this.value
+
+            function bluur() {
+                if (selecte1.selectedIndex == 0) {
+                    s0=this.value
+                    console.log(s0)
+                    lgl = tabPrix[0].indexOf('/')
+                    console.log(lgl)
+                    lg = tabPrix[0].substring(0, lgl)
+                    console.log(lg)
+                    prix.value = lg
+                }
+
+
+
+                if (selecte1.selectedIndex == 1) {
+                    s0=this.value
+                    lgl = tabPrix[1].indexOf('/')
+                    console.log(lgl)
+                    lg = tabPrix[1].substring(0, lgl)
+                    console.log(lg)
+                    prix.value = lg
+                }
+
+                if (selecte1.selectedIndex == 2) {
+                    s0=this.value
+                    lgl = tabPrix[2].indexOf('/')
+                    console.log(lgl)
+                    lg = tabPrix[2].substring(0, lgl)
+                    console.log(lg)
+                    prix.value = lg
+                }
+
+                if (selecte1.selectedIndex == 3) {
+                    s0=this.value
+                    lgl = tabPrix[3].indexOf('/')
+                    console.log(lgl)
+                    lg = tabPrix[3].substring(0, lgl)
+                    console.log(lg)
+                     prix.value = lg
+                }
+            }
+            
+           
+        }
+
+        radio2 = document.forms[0].elements[3]
+        radio2.addEventListener("click", sa)
+
+        function sa() {
+            selecte1.addEventListener("blur", bluur)
+            //console.log(this.value)
+            marque=this.value
+            function bluur() {
+                if (selecte1.selectedIndex == 0) {
+                    s0=this.value
+                    lgl = tabPrix[0].indexOf('/')
+                    console.log(lgl)
+                    lg = tabPrix[0].substring(lgl + 1)
+                    console.log(lg)
+                    prix.value = lg
+                }
+
+                if (selecte1.selectedIndex == 1) {
+                    s0=this.value
+                    lgl = tabPrix[1].indexOf('/')
+                    console.log(lgl)
+                    lg = tabPrix[1].substring(lgl + 1)
+                    console.log(lg)
+                    prix.value = lg
+                }
+                if (selecte1.selectedIndex == 2) {
+                    s0=this.value
+                    lgl = tabPrix[2].indexOf('/')
+                    console.log(lgl)
+                    lg = tabPrix[2].substring(lgl + 1)
+                    console.log(lg)
+                    prix.value = lg
+                }
+                if (selecte1.selectedIndex == 3) {
+                    s0=this.value
+                    lgl = tabPrix[3].indexOf('/')
+                    console.log(lgl)
+                    lg = tabPrix[3].substring(lgl + 1)
+                    console.log(lg)
+                    prix.value = lg
+                }
+            }
+        }
+        qua = document.forms[0].elements[7]
+        ins = document.forms[0].elements[8]
+        gar = document.forms[0].elements[9]
+        liv = document.forms[0].elements[10]
+        tot = document.forms[0].elements[13]
+        console.log(ins.checked)
+
+        console.log(tot)
+        quanti = document.forms[0].elements[7].value
+        console.log(quanti)
+var toti=0
+var a
+
+        function command() {
+            
+            var a=0
+            quanti = document.forms[0].elements[7].value
+            if(quanti <1)
+        {
+          return  ;
+        }
+            console.log(name)
+            quant = parseInt(prix.value) * parseInt(qua.value)
+            tot.value = quant+parseInt(toti)
+            console.log(tot.value)
+            if (ins.checked == true) {
+
+                tot.value = parseInt(tot.value) + 100
+                a=a+100
+            }
+            if (gar.checked == true) {
+
+                tot.value = parseInt(tot.value) + 200
+                a=a+200
+            }
+            if (liv.checked == true) {
+
+                tot.value = parseInt(tot.value) + 50
+                a=a+50
+            }
+            toti=parseInt(tot.value)
+            console.log(toti)
+            console.log(ins)
+            area=document.getElementById("m_c")
+            area.value=area.value+" marque et puissance : "+marque+" "+s0+" BTU quatite commendee :"+quanti+" prix :"+quant+"dt"+"+ "+parseInt(a)
+        }
+    
+    </script>
+</body>
+
+
+</html>
